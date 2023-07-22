@@ -1,0 +1,32 @@
+.content{
+  height: auto;
+  background-color: var(--text-color);
+  margin: 0;
+  padding:  0 80px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.service,
+.information,
+.home {
+  &__title{
+    color: var(--main-color);
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 10px;
+  }
+
+  &__text {
+    color: var(--comment-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px 0;
+  }
+}
+

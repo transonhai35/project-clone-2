@@ -1,0 +1,28 @@
+<main class="main">
+        <section class="profile">
+          <div class="profile__card">
+            <img src="../../assets/img/myavt.jpg" alt="" class="profile__img">
+            <div class="profile__info">
+              <div class="profile__box">
+                <p class="profile__greeting">Trần Sơn Hải</p>
+                <p class="profile__nickname">One love One future ❤️</p>
+              </div>
+              <div class="back-btn" (click)="backClicked()">
+                <mat-icon>arrow_forward</mat-icon>
+              </div>
+            </div>
+          </div>
+          <div class="profile__level">
+            <h1>Cấp 4</h1>
+            <p class="profile__details">Người nghiện Hust</p>
+          </div>
+        </section>
+  <div class="main__container grid wide row">
+    <div *ngFor="let shortcut of homeMenu" class="main__box col c-3">
+      <mat-icon class="main__icon" [routerLink]="['/', shortcut.path]">{{shortcut.name}}</mat-icon>
+      <p class ="main__text">{{shortcut.text}}</p>
+    </div>
+  </div>
+
+
+</main>

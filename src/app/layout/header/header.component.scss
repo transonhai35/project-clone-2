@@ -1,0 +1,137 @@
+.main {
+  height: var(--header-height);
+  width: 100%;
+  background-color: var(--main-color);
+  transition-duration: 0.2s;
+
+  &--scroll {
+    background-color: white;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+
+  &__container {
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &__title {
+    color: black;
+    padding-left: 5px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__button {
+    border-radius: 10px;
+    border: 1px solid rgb(224, 224, 224);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+    background-color: var(--white-color);
+
+    &:hover {
+      background-color: rgb(224, 224, 224);
+    }
+  }
+}
+
+.home-nav {
+  background-color: var(--main-color);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.home-nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.home-nav-bar,
+.home-notify {
+  color: black;
+  padding: 0 var(--padding-home);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-nav-bar-link,
+.home-notify-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: var(--white-color);
+}
+
+.home-bar-icon,
+.home-notify-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: var(--home-blue);
+  height: 44px;
+  line-height: 4.2rem;
+  width: 44px;
+  position: relative;
+  cursor: pointer;
+}
+
+.home-logo{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  vertical-align: middle;
+  margin: 0 auto;
+  line-height: 44px;
+}
+
+.home-logo-content {
+  color: var(--black-color);
+  padding-left: var(--padding-home);
+  display: flex;
+  align-items: center;
+  font-weight: 550;
+  font-size: 1.7rem;
+}
+
+.home-logo-img{
+  width: 100%;
+  height: 100%;
+}
+
+.home-indicator {
+  content: '';
+  background-color: var(--home-red);
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

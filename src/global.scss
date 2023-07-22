@@ -1,0 +1,63 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+@import "./assets/scss/grids.scss";
+
+//var
+:root{
+  --main-color: #EEF1F9;
+  --white-color: #fff;
+  --black-color: #252129;
+  --text-color: #333;
+  --comment-color: #6c757d;
+  --home-blue: #092c9f;
+  --home-red:#f73563;
+  --side-bar-background: #092c9f;
+
+  --border-color: #dbdbdb;
+  --shadow-color: rgba(204, 219, 232, 0.4);
+  --primary-hover-color: #ed5c3f;
+
+  --header-height: 70px;
+  --navbar-height: 700px;
+
+  --default-padding: 15px   ;
+  --default-margin: 24px;
+  --border-radius: 15px;
+}
+
+html{
+  /* 16px */
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  font-family: Nunito;
+}
+
+
+:root .mat-mdc-text-field-wrapper {
+  background-color: var(--white-color);
+  border-radius: 10px;
+}
+
+:root .ion-inherit-color {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+//htttpclient
+//merge map,forkjoin

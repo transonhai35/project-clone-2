@@ -1,0 +1,117 @@
+.main {
+  background-color: var(--side-bar-background);
+  height: 100vh;
+  padding: var(--default-padding) 5px;
+  &__container{
+    font-size: 3rem;
+    padding: var(--default-padding);
+    padding-left: 28px;
+    padding-right: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__box{
+    color: var(--white-color);
+    content: "";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px 5px;
+  }
+
+  &__icon {
+    font-size: 2.4rem;
+    cursor: pointer;
+  }
+
+  &__text{
+    color: var(--white-color);
+    font-size: 1.2rem;
+  }
+}
+
+.back-btn {
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.05);
+  padding: var(--default-padding);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.profile {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius);
+  color: var(--white-color);
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--default-padding);
+  }
+
+  &__img {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius);
+    margin-right: var(--default-padding);
+  }
+
+  &__info {
+    position: relative;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    color: var(--white-color);
+  }
+
+  &__greeting {
+    font-size: 1.6rem;
+    color: var(--white-color);
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__nickname {
+    color: var(--border-color);
+    opacity: 0.8;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  &__level{
+    padding: var(--default-padding);
+    border-radius: var(--border-radius);
+    background-color: #4D66B9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__details {
+    margin: 0;
+    opacity: 0.6;
+    margin-top: 5px;
+    font-size: 1.6rem;
+  }
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 3.3rem;
+}
