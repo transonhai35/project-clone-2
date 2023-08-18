@@ -32,12 +32,12 @@ export const HOMEMENU:Array<any> = [
   {
     name: 'local_shipping',
     text: 'Nhà phân phối',
-    path: '',
+    path: 'bussiness',
   },
   {
     name: 'bar_chart',
     text: 'Thống kê',
-    path: '',
+    path: 'statistics',
   },
   {
     name: 'exit_to_app',

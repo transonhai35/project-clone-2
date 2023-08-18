@@ -1,8 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
-import { BILLMEDICINE } from 'src/app/shared/utils/sale-medicine';
-import { MatSort } from '@angular/material/sort';
+import { Component, } from '@angular/core';
 import { ManageService } from 'src/app/core/manage.service';
 import { FormAddState } from 'src/app/core/form-state.service';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn,  } from '@angular/forms';
@@ -17,6 +13,7 @@ import { FORMADD } from './form-add';
 export class SaleMedicineComponent {
   hamburgerLink = 'LeftSideBar';
   bill:Array<any> = this.manageService.bill;
+  p:number = 1;
   formGroup:FormGroup;
   formAddState:boolean = false;
   formSaleState:boolean = false;
@@ -45,17 +42,6 @@ export class SaleMedicineComponent {
     }
 
 
-  displayedColumns: string[] = ['name', 'quantity', 'price','tax','total','date','person','action'];
-  dataSource = new MatTableDataSource<Array<any>>(this.bill);
-  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort!: MatSort;
-
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-
   onClickAdd() {
     if(this.formAddState === false){
       this.formAddState = true;
@@ -73,7 +59,7 @@ export class SaleMedicineComponent {
   onClickSale() {
     if(this.formSaleState === false){
       this.formSaleState = true;
-      this.formStateService.formAddState = this.formSaleState;
+      this.formStateService.formSaleState = this.formSaleState;
     }
   }
 

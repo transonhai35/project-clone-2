@@ -22,6 +22,9 @@
       <mat-icon class="main__icon" [routerLink]="['/', shortcut.path]">{{shortcut.name}}</mat-icon>
       <p class ="main__text">{{shortcut.text}}</p>
     </div>
+    <main [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </main>
   </div>
 
 

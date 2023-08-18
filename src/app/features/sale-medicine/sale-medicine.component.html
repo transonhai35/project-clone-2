@@ -19,77 +19,6 @@
 
         </div>
 
-        <div class="table">
-          <table mat-table matSort [dataSource]="dataSource">
-            <tbody>
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Tên thuốc </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.name}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="quantity">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Số lượng </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.quantity}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="price">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Đơn giá </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.price}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="tax">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Thuế </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.tax}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="total">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Thành tiền </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.total}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="date">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Ngày xuất </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.date}} </td>
-            </ng-container>
-            <ng-container matColumnDef="person">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Người xuất </th>
-              <td mat-cell *matCellDef="let element" class="table__item"> {{element.person}} </td>
-            </ng-container>
-            <ng-container matColumnDef="action">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="table__title"> Sửa, xóa, xuất </th>
-              <td mat-cell *matCellDef="let element" class="table__item">
-                <mat-icon>edit</mat-icon>
-                <mat-icon> delete</mat-icon>
-                <mat-icon>exit_to_app</mat-icon>
-              </td>
-            </ng-container>
-
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </tbody>
-          </table>
-
-          <table>
-            <tr *ngIf="!dataSource.data.length">
-              <td style="text-align: center;" [attr.colspan]="displayedColumns.length">
-                No Records Found!
-              </td>
-            </tr>
-          </table>
-
-        </div>
-        <mat-paginator
-          [pageSize]="5"
-          [pageSizeOptions]="[5, 10, 15]"
-          showFirstLastButtons
-        >
-        </mat-paginator>
-
-        <div class="space"></div>
-
-        <div class="space"></div>
-
         <div class="modal" [ngClass]="{'modal--active': formAddState}">
           <div class="modal__overlay">
               <div class="modal__body">
@@ -146,6 +75,42 @@
                 </div>
               </div>
           </div>
+        </div>
+
+
+        <div class="paginate">
+          <div class="grid">
+            <div class="col paginate__title">
+            <div class="c-1 paginate__title"> Tên thuốc </div>
+            <div class="c-1 paginate__title"> Số lượng </div>
+            <div class="c-1 paginate__title"> Đơn giá </div>
+            <div class="c-1 paginate__title"> Thuế </div>
+            <div class="c-1 paginate__title"> Thành tiền </div>
+            <div class="c-1 paginate__title"> Ngày xuất </div>
+            <div class="c-1 paginate__title"> Người xuất </div>
+            <div class="c-1 paginate__title"> Sửa, xóa, xuất </div>
+          </div>
+          <div class="col paginate__details" *ngFor="let item of bill| paginate: { itemsPerPage: 5, currentPage: p }">
+            <div class=" c-1 paginate__item"> {{item.name}} </div>
+            <div class=" c-1 paginate__item"> {{item.quantity}} </div>
+            <div class=" c-1 paginate__item"> {{item.price}} </div>
+            <div class=" c-1 paginate__item"> {{item.tax}} </div>
+            <div class=" c-1 paginate__item"> {{item.total}} </div>
+            <div class=" c-1 paginate__item"> {{item.date}} </div>
+            <div class=" c-1 paginate__item"> {{item.person}} </div>
+            <div class=" c-1 paginate__item">
+              <mat-icon>edit</mat-icon>
+              <mat-icon> delete</mat-icon>
+              <mat-icon>exit_to_app</mat-icon>
+            </div>
+
+          </div>
+          </div>
+
+          <pagination-controls class="paginate__control" (pageChange)="p = $event"
+                          previousLabel=""
+                          nextLabel=""
+          ></pagination-controls>
         </div>
 
       </div>

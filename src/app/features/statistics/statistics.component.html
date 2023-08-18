@@ -1,0 +1,65 @@
+<header>
+  <app-header
+  [routerLinkHamburger]='hamburgerLink'
+  ></app-header>
+</header>
+ <body>
+    <section class="content">
+      <div class="content" id="content">
+        <div class="space"></div>
+        <div class="container">
+          <div class="grid">
+            <div class="row no-gutters">
+              <div class="col c-6">
+                <p class="container__title">
+                  Báo cáo doanh thu
+                </p>
+                <p class="container__text">
+                  Báo cáo doanh thu hóa đơn trong một khoảng thời gian
+                </p>
+                <p class="container__text">
+                  Nhập số ngày cần báo và thời gian mong muốn
+                </p>
+                <p class="container__text">
+                  Ví dụ: 20 và 1/30/2023 sẽ báo cáo từ 1/10/2033 đến 1/30/2023
+                </p>
+                <div class="container__input">
+                  <mat-form-field class="full-width" appearance="outline" hideRequiredMarker>
+                    <mat-label>Nhập số ngày</mat-label>
+                    <div [formGroup]="formGroup">
+                      <input type='number' formControlName="totalDate" matInput id="total-date">
+                    </div>
+                    <mat-error>Bạn chưa nhập gì vào đây</mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="container__input">
+                  <mat-form-field class="full-width" appearance="outline" hideRequiredMarker>
+                    <mat-label>Ngày</mat-label>
+                    <div [formGroup]="formGroup">
+                      <input type='date' formControlName="date" matInput id="date">
+                    </div>
+                    <mat-error>Bạn chưa nhập gì vào đây</mat-error>
+                  </mat-form-field>
+                </div>
+                <button class="container__btn">Báo cáo doanh thu</button>
+              </div>
+              <div class="col c-6">
+                <p class="container__title">
+                  Báo cáo thống kê hàng tồn kho
+                </p>
+                <p class="container__text">
+                  Thống kê về số lượng thuốc hiện còn, hiện ghi chú về hạn sử dụng của thuốc
+                </p>
+                <button class="container__btn">Thống kê tồn kho</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </body>
+  <footer>
+  <app-footer></app-footer>
+
+</footer>

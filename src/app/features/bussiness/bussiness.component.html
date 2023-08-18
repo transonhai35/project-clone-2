@@ -1,0 +1,53 @@
+<header>
+  <app-header
+  [routerLinkHamburger]='hamburgerLink'
+  ></app-header>
+</header>
+
+<body>
+  <section class="content" id="content">
+    <div class="space"></div>
+
+    <div class="header">
+      <p class="header__title">Quản lý nhà phân phối</p>
+
+    </div>
+
+    <div class="paginate">
+      <div class="grid">
+        <div class="col paginate__title">
+        <div class="c-2 paginate__title"> Nhà phân phối </div>
+        <div class="c-2 paginate__title"> Địa chỉ </div>
+        <div class="c-2 paginate__title"> Số điện thoại </div>
+        <div class="c-2 paginate__title"> Fax </div>
+        <div class="c-2 paginate__title"> Email </div>
+        <div class="c-2 paginate__title"> Sửa, xóa </div>
+      </div>
+      <div class="col paginate__details" *ngFor="let item of bussiness | paginate: { itemsPerPage: 5, currentPage: p }">
+        <div class=" c-2 paginate__item"> {{item.name}} </div>
+        <div class=" c-2 paginate__item"> {{item.address}} </div>
+        <div class=" c-2 paginate__item"> {{item.phone}} </div>
+        <div class=" c-2 paginate__item"> {{item.fax}} </div>
+        <div class=" c-2 paginate__item"> {{item.email}} </div>
+        <div class=" c-2 paginate__item">
+          <mat-icon>edit</mat-icon>
+          <mat-icon> delete</mat-icon>
+        </div>
+
+      </div>
+      </div>
+
+      <pagination-controls class="paginate__control" (pageChange)="p = $event"
+                      previousLabel=""
+                      nextLabel=""
+      ></pagination-controls>
+    </div>
+
+
+  </section>
+</body>
+
+<footer>
+
+  <app-footer></app-footer>
+</footer>

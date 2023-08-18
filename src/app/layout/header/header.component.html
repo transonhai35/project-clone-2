@@ -2,11 +2,15 @@
 
 <header class="main">
   <div class="main__container">
-    <div class="main__button main__hamburger" (click)="navigate('leftSideBar')">
+    <div class="main__button main__hamburger" [routerLink]="['/','leftSideBar']" >
       <i class="fa-solid fa-bars home-bar-icon"></i>
     </div>
+    <!-- <main [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </main> -->
     <div class="main__logo">
       <img src="../../../assets/img/onelove.png">
+      <div class="main__title">Hiệu thuốc RHUST </div>
       <div class="main__title">{{headerTitle}}</div>
     </div>
     <div class="main__button main__notification" (click)="onClickNotify.emit()">

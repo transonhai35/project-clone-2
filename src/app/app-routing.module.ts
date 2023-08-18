@@ -6,6 +6,8 @@ import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
 import { ManageMedicineComponent } from './features/manage-medicine/manage-medicine.component';
 import { SaleMedicineComponent } from './features/sale-medicine/sale-medicine.component';
 import { StockInComponent } from './features/stock-in/stock-in.component';
+import { BussinessComponent } from './features/bussiness/bussiness.component';
+import { StatisticsComponent } from './features/statistics/statistics.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'leftSideBar',
-    component: LeftSideBarComponent
+    component: LeftSideBarComponent,
+    data: { animation: 'isLeft'}
   },
   {
     path: 'manageMedicine',
@@ -35,6 +38,14 @@ const routes: Routes = [
   {
     path: 'stok-in',
     component: StockInComponent
+  },
+  {
+    path: 'bussiness',
+    component: BussinessComponent
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent
   }
 ];
 

@@ -1,8 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn,  } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { ManageService } from 'src/app/core/manage.service';
 import { FORMMEDICINE } from './form-medicine';
 import { FormAddState } from 'src/app/core/form-state.service';
@@ -20,6 +17,7 @@ export class ManageMedicineComponent {
   formGroup:FormGroup;
   formState:boolean = false;
   formMedicine = FORMMEDICINE;
+  p: number = 1;
 
   constructor(private manageService : ManageService,
               private formBuilder: FormBuilder,
@@ -76,17 +74,6 @@ export class ManageMedicineComponent {
   //   return this.email.hasError('email') ? 'Not a valid email' : '';
   // }
 
-  displayedColumns: string[] = ['name', 'quantity', 'producer','price','unit','dosage','date','action'];
-          dataSource = new MatTableDataSource<Array<any>>(this.manageMedicine);
-          @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
-
-
-          @ViewChild(MatSort, { static: true }) sort!: MatSort;
-
-          ngOnInit() {
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
-          }
 
 
 }

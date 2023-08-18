@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HOMEMENU } from '../shared/utils/home-menu';
 import { Location } from '@angular/common';
 
@@ -20,8 +20,8 @@ export class LeftSideBarComponent {
     this.location.back();
   }
 
-  navigate(path: string) {
-    this.router.navigateByUrl(path);
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
   }
 
 }
